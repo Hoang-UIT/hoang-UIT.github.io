@@ -39,7 +39,7 @@ function playStream(idVideoTag, stream) {
 }
 
 const peer = new Peer({
-	key:'peerjs', host:'hoangtp-stream-3500.herokuapp.com', 
+	key:'peerjs', host:'https://9000-e6badb17-8738-4366-93fe-3a500bd77cf7.ws-us02.gitpod.io', 
 	secure:true, 
 	port: 443});
 
