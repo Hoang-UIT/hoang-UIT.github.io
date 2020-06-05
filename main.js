@@ -40,11 +40,8 @@ function playStream(idVideoTag, stream) {
 
 const peer = new Peer({
 	key: 'peerjs',
-	host: '9000-cdb98c25-7562-4bd0-ac3d-341c2cdab3df.ws-us02.gitpod.io',
-	port: 9000,
-	path: '/ (v. 0.5.3)'
+	host: '9000-cdb98c25-7562-4bd0-ac3d-341c2cdab3df.ws-us02.gitpod.io'
 });
-
 
 peer.on('open',id => {
 	console(id);
