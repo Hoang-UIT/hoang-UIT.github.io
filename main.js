@@ -38,11 +38,10 @@ function playStream(idVideoTag, stream) {
 	video.play();
 }
 
-var peer = new Peer('15913411276290.6313382008623207',{
+const peer = new Peer({
 	key: 'peerjs',
 	host: '9000-cdb98c25-7562-4bd0-ac3d-341c2cdab3df.ws-us02.gitpod.io',
-	port: 443,
-	path:'/hoangtp-stream-3005',
+	port: 9000
 });
 
 
