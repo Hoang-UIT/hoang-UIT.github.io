@@ -47,6 +47,7 @@ const peer = new Peer({
 
 
 peer.on('open',id => {
+	console.log(id);
 	$('#my-peer').append(id);
 	$('#btnSignUp').click(()=> {
 		const username = $('#txtUsername').val();
@@ -69,7 +70,7 @@ $('#btnCall').click(() => {
 
 peer.on('call', call => {
 	openStream()
-	then(stream => {
+	.then(stream => {
 		call.answer(stream);
 		playStream('localStream', stream);
 		call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
