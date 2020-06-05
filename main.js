@@ -38,7 +38,7 @@ function playStream(idVideoTag, stream) {
 	video.play();
 }
 
-const peer = new Peer({
+const peer = new Peer('15913300944740.6083736050382624',{
 	key:'peerjs', 
 	host:'9000-e6badb17-8738-4366-93fe-3a500bd77cf7.ws-us02.gitpod.io',
 	port:443,
