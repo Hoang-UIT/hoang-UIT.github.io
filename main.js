@@ -38,12 +38,8 @@ function playStream(idVideoTag, stream) {
 	video.play();
 }
 
-// openStream()
-// .then(stream => playStream('localStream',stream));
-
-
 const peer = new Peer({
-	key:'peerjs', host:'https://hoangtp-stream-3500.herokuapp.com', 
+	key:'peerjs', host:'hoangtp-stream-3500.herokuapp.com', 
 	secure:true, 
 	port: 443});
 
@@ -72,6 +68,7 @@ peer.on('call', call => {
 	openStream()
 	then(stream => {
 		call.answer(stream);
+		playStream('localStream', stream);
 		call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
 	});
 });
@@ -88,8 +85,8 @@ $('#ulUser').on('click','li', function() {
 	const id = $(this).attr('id');
 	openStream()
 	.then(stream => {
-		playStream('localStream', stream);
 		const call = peer.call(id, stream);
+		playStream('localStream', stream);
 		call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
 	});
 });
