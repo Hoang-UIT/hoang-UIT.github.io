@@ -38,11 +38,7 @@ function playStream(idVideoTag, stream) {
 	video.play();
 }
 
-const peer = new Peer('someid', {
-      host: 'localhost',
-      port: 9000,
-      path: '/hoangtp-stream-3500'
-    });
+const peer = new Peer();
 
 peer.on('open',id => {
 	$('#my-peer').append(id);
