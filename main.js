@@ -40,13 +40,17 @@ function playStream(idVideoTag, stream) {
 
 const peer = new Peer();
 
-peer.on('open',id => {
-	$('#my-peer').append(id);
-	$('#btnSignUp').click(()=> {
-		const username = $('#txtUsername').val();
-		socket.emit('NGUOI_DUNG_DANG_KY', {ten: username, peerId: id});
-	});
+peer.on('open', function(id) {
+  console.log('My peer ID is: ' + id);
 });
+
+// peer.on('open',id => {
+// 	$('#my-peer').append(id);
+// 	$('#btnSignUp').click(()=> {
+// 		const username = $('#txtUsername').val();
+// 		socket.emit('NGUOI_DUNG_DANG_KY', {ten: username, peerId: id});
+// 	});
+// });
 
 
 // Caller
