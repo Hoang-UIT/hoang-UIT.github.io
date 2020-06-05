@@ -73,14 +73,6 @@ peer.on('call', call => {
 	});
 });
 
-$('#btnSignUp').click(()=> {
-	console.log('Sign Up');
-	const username = $('#txtUsername').val();
-	console.log(username);
-	socket.emit('NGUOI_DUNG_DANG_KY', {ten: username, peerId: "peer-key"});
-});
-
-
 $('#ulUser').on('click','li', function() {
 	const id = $(this).attr('id');
 	openStream()
