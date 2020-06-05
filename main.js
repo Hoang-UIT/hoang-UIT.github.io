@@ -38,19 +38,21 @@ function playStream(idVideoTag, stream) {
 	video.play();
 }
 
-const peer = new Peer();
-
-peer.on('open', function(id) {
-  console.log('My peer ID is: ' + id);
+const peer = new Peer({
+	key: 'peerjs',
+	host: '9000-e6badb17-8738-4366-93fe-3a500bd77cf7.ws-us02.gitpod.io',
+	port: 9000,
+	path:'/hoangtp-stream-3500',
 });
 
-// peer.on('open',id => {
-// 	$('#my-peer').append(id);
-// 	$('#btnSignUp').click(()=> {
-// 		const username = $('#txtUsername').val();
-// 		socket.emit('NGUOI_DUNG_DANG_KY', {ten: username, peerId: id});
-// 	});
-// });
+
+peer.on('open',id => {
+	$('#my-peer').append(id);
+	$('#btnSignUp').click(()=> {
+		const username = $('#txtUsername').val();
+		socket.emit('NGUOI_DUNG_DANG_KY', {ten: username, peerId: id});
+	});
+});
 
 
 // Caller
