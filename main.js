@@ -42,7 +42,7 @@ const peer = new Peer({
 	key: 'peerjs',
 	host: '9000-cdb98c25-7562-4bd0-ac3d-341c2cdab3df.ws-us02.gitpod.io',
 	port: 9000,
-	path: '/peerjs-server'
+	path: '/myapp'
 });
 
 
